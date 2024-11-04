@@ -1,0 +1,2478 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/30/2024 2:52:44 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-HRQ7E21P"
+  DTS:CreatorName="LAPTOP-HRQ7E21P\16ado"
+  DTS:DTSID="{1637A273-2934-4CDD-8E19-B2E7E0748919}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="17418"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{A3E3C9D7-922F-4E1D-A95C-2C53128D4FAE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow acc_20"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C28B86F2-CF8D-48C8-AEFB-E91A92F85093}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow acc_20"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow acc_20\ADO NET Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">[dbo].[dim_condiciones]</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow acc_20\ADO NET Destination.Connections[IDbConnection]"
+                  connectionManagerID="{1BD2EBF0-B75F-439E-B1E8-8830B522BE9E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-HRQ7E21P.StarAcc.choster900]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[LGT_COND]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LGT_COND"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LGT_COND]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[LGT_COND]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[LGT_CONDNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LGT_CONDNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LGT_CONDNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[LGT_CONDNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[WEATHER]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="WEATHER"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[WEATHER]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[WEATHER]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[WEATHERNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="WEATHERNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[WEATHERNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[WEATHERNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[INT_HWY]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="INT_HWY"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[INT_HWY]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[INT_HWY]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[CONDICION_ID]"
+                      cachedDataType="i8"
+                      cachedName="CONDICION_ID"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CONDICION_ID]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[CONDICION_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[INT_HWYNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="INT_HWYNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[INT_HWYNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[INT_HWYNAME]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CONDICION_ID]"
+                      dataType="i4"
+                      name="CONDICION_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LGT_COND]"
+                      dataType="i4"
+                      name="LGT_COND" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LGT_CONDNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="LGT_CONDNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[WEATHER]"
+                      dataType="i4"
+                      name="WEATHER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[WEATHERNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="WEATHERNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[INT_HWY]"
+                      dataType="i4"
+                      name="INT_HWY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[INT_HWYNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="INT_HWYNAME" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow acc_20\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow acc_20\ADO NET Destination 1"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">[dbo].[dim_factores]</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow acc_20\ADO NET Destination 1.Connections[IDbConnection]"
+                  connectionManagerID="{1BD2EBF0-B75F-439E-B1E8-8830B522BE9E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-HRQ7E21P.StarAcc.choster900]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[FACTOR_ID]"
+                      cachedDataType="i8"
+                      cachedName="FACTOR_ID"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[FACTOR_ID]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[FACTOR_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[SCH_BUS]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SCH_BUS"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[SCH_BUS]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[SCH_BUS]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[SCH_BUSNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SCH_BUSNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[SCH_BUSNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[SCH_BUSNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[EVENT1_IM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="EVENT1_IM"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[EVENT1_IM]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[EVENT1_IM]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[EVENT1_IMNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="EVENT1_IMNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[EVENT1_IMNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[EVENT1_IMNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[MANCOL_IM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MANCOL_IM"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[MANCOL_IM]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[MANCOL_IM]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[MANCOL_IMNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MANCOL_IMNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[MANCOL_IMNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[MANCOL_IMNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[RELJCT1_IM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RELJCT1_IM"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[RELJCT1_IM]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[RELJCT1_IM]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[RELJCT1_IMNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RELJCT1_IMNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[RELJCT1_IMNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[RELJCT1_IMNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[RELJCT2_IM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RELJCT2_IM"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[RELJCT2_IM]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[RELJCT2_IM]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[RELJCT2_IMNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RELJCT2_IMNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[RELJCT2_IMNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[RELJCT2_IMNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[LGTCON_IM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LGTCON_IM"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[LGTCON_IM]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[LGTCON_IM]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[LGTCON_IMNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LGTCON_IMNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[LGTCON_IMNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[LGTCON_IMNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[WEATHR_IM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="WEATHR_IM"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[WEATHR_IM]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[WEATHR_IM]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[WEATHR_IMNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="WEATHR_IMNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[WEATHR_IMNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[WEATHR_IMNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[MAXSEV_IM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MAXSEV_IM"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[MAXSEV_IM]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[MAXSEV_IM]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[MAXSEV_IMNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MAXSEV_IMNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[MAXSEV_IMNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[MAXSEV_IMNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[ALCHL_IM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ALCHL_IM"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[ALCHL_IM]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[ALCHL_IM]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[ALCHL_IMNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ALCHL_IMNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[ALCHL_IMNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[ALCHL_IMNAME]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[FACTOR_ID]"
+                      dataType="i4"
+                      name="FACTOR_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[SCH_BUS]"
+                      dataType="i4"
+                      name="SCH_BUS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[SCH_BUSNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="SCH_BUSNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[EVENT1_IM]"
+                      dataType="i4"
+                      name="EVENT1_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[EVENT1_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="EVENT1_IMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[MANCOL_IM]"
+                      dataType="i4"
+                      name="MANCOL_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[MANCOL_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="MANCOL_IMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[RELJCT1_IM]"
+                      dataType="i4"
+                      name="RELJCT1_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[RELJCT1_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="RELJCT1_IMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[RELJCT2_IM]"
+                      dataType="i4"
+                      name="RELJCT2_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[RELJCT2_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="RELJCT2_IMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[LGTCON_IM]"
+                      dataType="i4"
+                      name="LGTCON_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[LGTCON_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="LGTCON_IMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[WEATHR_IM]"
+                      dataType="i4"
+                      name="WEATHR_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[WEATHR_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="WEATHR_IMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[MAXSEV_IM]"
+                      dataType="i4"
+                      name="MAXSEV_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[MAXSEV_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="MAXSEV_IMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[ALCHL_IM]"
+                      dataType="i4"
+                      name="ALCHL_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[ALCHL_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="ALCHL_IMNAME" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow acc_20\ADO NET Destination 1.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Destination 1.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 1.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Destination 1.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow acc_20\ADO NET Destination 2"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination 2"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">[dbo].[dim_tiempo]</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow acc_20\ADO NET Destination 2.Connections[IDbConnection]"
+                  connectionManagerID="{1BD2EBF0-B75F-439E-B1E8-8830B522BE9E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-HRQ7E21P.StarAcc.choster900]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].Columns[TIEMPO_ID]"
+                      cachedDataType="i8"
+                      cachedName="TIEMPO_ID"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[TIEMPO_ID]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[TIEMPO_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].Columns[YEAR]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="YEAR"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[YEAR]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[YEAR]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].Columns[MONTH]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MONTH"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[MONTH]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[MONTH]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].Columns[MONTHNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MONTHNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[MONTHNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[MONTHNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].Columns[DAY_WEEK]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DAY_WEEK"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[DAY_WEEK]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[DAY_WEEK]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].Columns[DAY_WEEKNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DAY_WEEKNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[DAY_WEEKNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[DAY_WEEKNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].Columns[HOUR]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="HOUR"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[HOUR]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[HOUR]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].Columns[MINUTE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MINUTE"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[MINUTE]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[MINUTE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[TIEMPO_ID]"
+                      dataType="i4"
+                      name="TIEMPO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[YEAR]"
+                      dataType="i4"
+                      name="YEAR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[MONTH]"
+                      dataType="i4"
+                      name="MONTH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[MONTHNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="MONTHNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[DAY_WEEK]"
+                      dataType="i4"
+                      name="DAY_WEEK" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[DAY_WEEKNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="DAY_WEEKNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[HOUR]"
+                      dataType="i4"
+                      name="HOUR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input].ExternalColumns[MINUTE]"
+                      dataType="i4"
+                      name="MINUTE" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow acc_20\ADO NET Destination 2.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Destination 2.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 2.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Destination 2.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow acc_20\ADO NET Destination 3"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination 3"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">[dbo].[dim_ubicacion]</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow acc_20\ADO NET Destination 3.Connections[IDbConnection]"
+                  connectionManagerID="{1BD2EBF0-B75F-439E-B1E8-8830B522BE9E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-HRQ7E21P.StarAcc.choster900]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].Columns[UBICACION_ID]"
+                      cachedDataType="i8"
+                      cachedName="UBICACION_ID"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[UBICACION_ID]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[UBICACION_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].Columns[STRATUM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="STRATUM"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[STRATUM]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[STRATUM]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].Columns[STRATUMNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="STRATUMNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[STRATUMNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[STRATUMNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].Columns[REGION]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="REGION"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[REGION]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[REGION]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].Columns[REGIONNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="REGIONNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[REGIONNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[REGIONNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].Columns[PSU]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PSU"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[PSU]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[PSU]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].Columns[URBANICITY]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="URBANICITY"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[URBANICITY]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[URBANICITY]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].Columns[URBANICITYNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="URBANICITYNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[URBANICITYNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[URBANICITYNAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].Columns[WRK_ZONE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="WRK_ZONE"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[WRK_ZONE]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[WRK_ZONE]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].Columns[REL_ROAD]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="REL_ROAD"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[REL_ROAD]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[REL_ROAD]" />
+                    <inputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].Columns[REL_ROADNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="REL_ROADNAME"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[REL_ROADNAME]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[REL_ROADNAME]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[UBICACION_ID]"
+                      dataType="i4"
+                      name="UBICACION_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[STRATUM]"
+                      dataType="i4"
+                      name="STRATUM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[STRATUMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="STRATUMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[REGION]"
+                      dataType="i4"
+                      name="REGION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[REGIONNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="REGIONNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[PSU]"
+                      dataType="i4"
+                      name="PSU" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[URBANICITY]"
+                      dataType="i4"
+                      name="URBANICITY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[URBANICITYNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="URBANICITYNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[WRK_ZONE]"
+                      dataType="i4"
+                      name="WRK_ZONE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[REL_ROAD]"
+                      dataType="i4"
+                      name="REL_ROAD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input].ExternalColumns[REL_ROADNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="REL_ROADNAME" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow acc_20\ADO NET Destination 3.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Destination 3.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Destination 3.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Destination 3.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow acc_20\ADO NET Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    ROW_NUMBER() OVER (ORDER BY LGT_COND, WEATHER, INT_HWY) AS CONDICION_ID,
+    LGT_COND, 
+    LGT_CONDNAME, 
+    WEATHER, 
+    WEATHERNAME, 
+    INT_HWY,
+    INT_HWYNAME
+FROM 
+    (SELECT DISTINCT LGT_COND, LGT_CONDNAME, WEATHER, WEATHERNAME, INT_HWY, INT_HWYNAME
+     FROM dbo.acc_20) AS distinct_conditions;</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow acc_20\ADO NET Source.Connections[IDbConnection]"
+                  connectionManagerID="{88BE1F59-5BBE-41B4-90F5-6089FC80EB01}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-HRQ7E21P.AccidentsUsCaseNum.choster900]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[CONDICION_ID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[CONDICION_ID]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[CONDICION_ID]"
+                      name="CONDICION_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[LGT_COND]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[LGT_COND]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[LGT_COND]"
+                      name="LGT_COND"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[LGT_CONDNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[LGT_CONDNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[LGT_CONDNAME]"
+                      name="LGT_CONDNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[WEATHER]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[WEATHER]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[WEATHER]"
+                      name="WEATHER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[WEATHERNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[WEATHERNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[WEATHERNAME]"
+                      name="WEATHERNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[INT_HWY]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[INT_HWY]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[INT_HWY]"
+                      name="INT_HWY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[INT_HWYNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[INT_HWYNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].Columns[INT_HWYNAME]"
+                      name="INT_HWYNAME"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[CONDICION_ID]"
+                      dataType="i8"
+                      name="CONDICION_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[LGT_COND]"
+                      dataType="wstr"
+                      length="255"
+                      name="LGT_COND" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[LGT_CONDNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="LGT_CONDNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[WEATHER]"
+                      dataType="wstr"
+                      length="255"
+                      name="WEATHER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[WEATHERNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="WEATHERNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[INT_HWY]"
+                      dataType="wstr"
+                      length="255"
+                      name="INT_HWY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[INT_HWYNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="INT_HWYNAME" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[CONDICION_ID]"
+                      dataType="i8"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[CONDICION_ID]"
+                      name="CONDICION_ID" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[LGT_COND]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[LGT_COND]"
+                      name="LGT_COND" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[LGT_CONDNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[LGT_CONDNAME]"
+                      name="LGT_CONDNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[WEATHER]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[WEATHER]"
+                      name="WEATHER" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[WEATHERNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[WEATHERNAME]"
+                      name="WEATHERNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[INT_HWY]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[INT_HWY]"
+                      name="INT_HWY" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[INT_HWYNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[INT_HWYNAME]"
+                      name="INT_HWYNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow acc_20\ADO NET Source 1"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    ROW_NUMBER() OVER (ORDER BY SCH_BUS, EVENT1_IM, MANCOL_IM, RELJCT1_IM, RELJCT2_IM, LGTCON_IM, WEATHR_IM, MAXSEV_IM, ALCHL_IM) AS FACTOR_ID,
+    SCH_BUS,
+    SCH_BUSNAME,
+    EVENT1_IM,
+    EVENT1_IMNAME,
+    MANCOL_IM,
+    MANCOL_IMNAME,
+    RELJCT1_IM,
+    RELJCT1_IMNAME,
+    RELJCT2_IM,
+    RELJCT2_IMNAME,
+    LGTCON_IM,
+    LGTCON_IMNAME,
+    WEATHR_IM,
+    WEATHR_IMNAME,
+    MAXSEV_IM,
+    MAXSEV_IMNAME,
+    ALCHL_IM,
+    ALCHL_IMNAME
+FROM 
+    (SELECT DISTINCT 
+        SCH_BUS,
+        SCH_BUSNAME,
+        EVENT1_IM,
+        EVENT1_IMNAME,
+        MANCOL_IM,
+        MANCOL_IMNAME,
+        RELJCT1_IM,
+        RELJCT1_IMNAME,
+        RELJCT2_IM,
+        RELJCT2_IMNAME,
+        LGTCON_IM,
+        LGTCON_IMNAME,
+        WEATHR_IM,
+        WEATHR_IMNAME,
+        MAXSEV_IM,
+        MAXSEV_IMNAME,
+        ALCHL_IM,
+        ALCHL_IMNAME
+     FROM 
+        dbo.acc_20) AS distinct_factores;</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow acc_20\ADO NET Source 1.Connections[IDbConnection]"
+                  connectionManagerID="{88BE1F59-5BBE-41B4-90F5-6089FC80EB01}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-HRQ7E21P.AccidentsUsCaseNum.choster900]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[FACTOR_ID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[FACTOR_ID]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[FACTOR_ID]"
+                      name="FACTOR_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[SCH_BUS]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[SCH_BUS]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[SCH_BUS]"
+                      name="SCH_BUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[SCH_BUSNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[SCH_BUSNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[SCH_BUSNAME]"
+                      name="SCH_BUSNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[EVENT1_IM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[EVENT1_IM]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[EVENT1_IM]"
+                      name="EVENT1_IM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[EVENT1_IMNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[EVENT1_IMNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[EVENT1_IMNAME]"
+                      name="EVENT1_IMNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[MANCOL_IM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[MANCOL_IM]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[MANCOL_IM]"
+                      name="MANCOL_IM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[MANCOL_IMNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[MANCOL_IMNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[MANCOL_IMNAME]"
+                      name="MANCOL_IMNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[RELJCT1_IM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[RELJCT1_IM]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[RELJCT1_IM]"
+                      name="RELJCT1_IM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[RELJCT1_IMNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[RELJCT1_IMNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[RELJCT1_IMNAME]"
+                      name="RELJCT1_IMNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[RELJCT2_IM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[RELJCT2_IM]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[RELJCT2_IM]"
+                      name="RELJCT2_IM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[RELJCT2_IMNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[RELJCT2_IMNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[RELJCT2_IMNAME]"
+                      name="RELJCT2_IMNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[LGTCON_IM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[LGTCON_IM]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[LGTCON_IM]"
+                      name="LGTCON_IM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[LGTCON_IMNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[LGTCON_IMNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[LGTCON_IMNAME]"
+                      name="LGTCON_IMNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[WEATHR_IM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[WEATHR_IM]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[WEATHR_IM]"
+                      name="WEATHR_IM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[WEATHR_IMNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[WEATHR_IMNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[WEATHR_IMNAME]"
+                      name="WEATHR_IMNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[MAXSEV_IM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[MAXSEV_IM]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[MAXSEV_IM]"
+                      name="MAXSEV_IM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[MAXSEV_IMNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[MAXSEV_IMNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[MAXSEV_IMNAME]"
+                      name="MAXSEV_IMNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[ALCHL_IM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[ALCHL_IM]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[ALCHL_IM]"
+                      name="ALCHL_IM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[ALCHL_IMNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[ALCHL_IMNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].Columns[ALCHL_IMNAME]"
+                      name="ALCHL_IMNAME"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[FACTOR_ID]"
+                      dataType="i8"
+                      name="FACTOR_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[SCH_BUS]"
+                      dataType="wstr"
+                      length="255"
+                      name="SCH_BUS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[SCH_BUSNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="SCH_BUSNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[EVENT1_IM]"
+                      dataType="wstr"
+                      length="255"
+                      name="EVENT1_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[EVENT1_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="EVENT1_IMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[MANCOL_IM]"
+                      dataType="wstr"
+                      length="255"
+                      name="MANCOL_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[MANCOL_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="MANCOL_IMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[RELJCT1_IM]"
+                      dataType="wstr"
+                      length="255"
+                      name="RELJCT1_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[RELJCT1_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="RELJCT1_IMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[RELJCT2_IM]"
+                      dataType="wstr"
+                      length="255"
+                      name="RELJCT2_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[RELJCT2_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="RELJCT2_IMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[LGTCON_IM]"
+                      dataType="wstr"
+                      length="255"
+                      name="LGTCON_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[LGTCON_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="LGTCON_IMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[WEATHR_IM]"
+                      dataType="wstr"
+                      length="255"
+                      name="WEATHR_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[WEATHR_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="WEATHR_IMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[MAXSEV_IM]"
+                      dataType="wstr"
+                      length="255"
+                      name="MAXSEV_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[MAXSEV_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="MAXSEV_IMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[ALCHL_IM]"
+                      dataType="wstr"
+                      length="255"
+                      name="ALCHL_IM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output].ExternalColumns[ALCHL_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="ALCHL_IMNAME" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[FACTOR_ID]"
+                      dataType="i8"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[FACTOR_ID]"
+                      name="FACTOR_ID" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[SCH_BUS]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[SCH_BUS]"
+                      name="SCH_BUS" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[SCH_BUSNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[SCH_BUSNAME]"
+                      name="SCH_BUSNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[EVENT1_IM]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[EVENT1_IM]"
+                      name="EVENT1_IM" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[EVENT1_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[EVENT1_IMNAME]"
+                      name="EVENT1_IMNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[MANCOL_IM]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[MANCOL_IM]"
+                      name="MANCOL_IM" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[MANCOL_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[MANCOL_IMNAME]"
+                      name="MANCOL_IMNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[RELJCT1_IM]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[RELJCT1_IM]"
+                      name="RELJCT1_IM" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[RELJCT1_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[RELJCT1_IMNAME]"
+                      name="RELJCT1_IMNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[RELJCT2_IM]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[RELJCT2_IM]"
+                      name="RELJCT2_IM" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[RELJCT2_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[RELJCT2_IMNAME]"
+                      name="RELJCT2_IMNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[LGTCON_IM]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[LGTCON_IM]"
+                      name="LGTCON_IM" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[LGTCON_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[LGTCON_IMNAME]"
+                      name="LGTCON_IMNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[WEATHR_IM]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[WEATHR_IM]"
+                      name="WEATHR_IM" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[WEATHR_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[WEATHR_IMNAME]"
+                      name="WEATHR_IMNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[MAXSEV_IM]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[MAXSEV_IM]"
+                      name="MAXSEV_IM" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[MAXSEV_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[MAXSEV_IMNAME]"
+                      name="MAXSEV_IMNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[ALCHL_IM]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[ALCHL_IM]"
+                      name="ALCHL_IM" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[ALCHL_IMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[ALCHL_IMNAME]"
+                      name="ALCHL_IMNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow acc_20\ADO NET Source 2"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source 2"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    ROW_NUMBER() OVER (ORDER BY YEAR, MONTH, DAY_WEEK, HOUR, MINUTE) AS TIEMPO_ID,
+    YEAR,
+    MONTH,
+    MONTHNAME,
+    DAY_WEEK,
+    DAY_WEEKNAME,
+    HOUR,
+    MINUTE
+FROM 
+    (SELECT DISTINCT 
+        YEAR,
+        MONTH,
+        MONTHNAME,
+        DAY_WEEK,
+        DAY_WEEKNAME,
+        HOUR,
+        MINUTE
+     FROM 
+        dbo.acc_20) AS distinct_tiempo;</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow acc_20\ADO NET Source 2.Connections[IDbConnection]"
+                  connectionManagerID="{88BE1F59-5BBE-41B4-90F5-6089FC80EB01}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-HRQ7E21P.AccidentsUsCaseNum.choster900]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[TIEMPO_ID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[TIEMPO_ID]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[TIEMPO_ID]"
+                      name="TIEMPO_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[YEAR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[YEAR]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[YEAR]"
+                      name="YEAR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[MONTH]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[MONTH]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[MONTH]"
+                      name="MONTH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[MONTHNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[MONTHNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[MONTHNAME]"
+                      name="MONTHNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[DAY_WEEK]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[DAY_WEEK]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[DAY_WEEK]"
+                      name="DAY_WEEK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[DAY_WEEKNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[DAY_WEEKNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[DAY_WEEKNAME]"
+                      name="DAY_WEEKNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[HOUR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[HOUR]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[HOUR]"
+                      name="HOUR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[MINUTE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[MINUTE]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].Columns[MINUTE]"
+                      name="MINUTE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[TIEMPO_ID]"
+                      dataType="i8"
+                      name="TIEMPO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[YEAR]"
+                      dataType="wstr"
+                      length="255"
+                      name="YEAR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[MONTH]"
+                      dataType="wstr"
+                      length="255"
+                      name="MONTH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[MONTHNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="MONTHNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[DAY_WEEK]"
+                      dataType="wstr"
+                      length="255"
+                      name="DAY_WEEK" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[DAY_WEEKNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="DAY_WEEKNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[HOUR]"
+                      dataType="wstr"
+                      length="255"
+                      name="HOUR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output].ExternalColumns[MINUTE]"
+                      dataType="wstr"
+                      length="255"
+                      name="MINUTE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[TIEMPO_ID]"
+                      dataType="i8"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[TIEMPO_ID]"
+                      name="TIEMPO_ID" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[YEAR]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[YEAR]"
+                      name="YEAR" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[MONTH]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[MONTH]"
+                      name="MONTH" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[MONTHNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[MONTHNAME]"
+                      name="MONTHNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[DAY_WEEK]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[DAY_WEEK]"
+                      name="DAY_WEEK" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[DAY_WEEKNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[DAY_WEEKNAME]"
+                      name="DAY_WEEKNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[HOUR]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[HOUR]"
+                      name="HOUR" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[MINUTE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[MINUTE]"
+                      name="MINUTE" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow acc_20\ADO NET Source 3"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source 3"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    ROW_NUMBER() OVER (ORDER BY STRATUM, REGION, PSU, URBANICITY, WRK_ZONE) AS UBICACION_ID,
+    STRATUM,
+    STRATUMNAME,
+    REGION,
+    REGIONNAME,
+    PSU,
+    URBANICITY,
+    URBANICITYNAME,
+    WRK_ZONE,
+    REL_ROAD,
+    REL_ROADNAME
+FROM 
+    (SELECT DISTINCT 
+        STRATUM,
+        STRATUMNAME,
+        REGION,
+        REGIONNAME,
+        PSU,
+        URBANICITY,
+        URBANICITYNAME,
+        WRK_ZONE,
+        REL_ROAD,
+        REL_ROADNAME
+     FROM 
+        dbo.acc_20) AS distinct_ubicacion;</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow acc_20\ADO NET Source 3.Connections[IDbConnection]"
+                  connectionManagerID="{88BE1F59-5BBE-41B4-90F5-6089FC80EB01}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-HRQ7E21P.AccidentsUsCaseNum.choster900]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[UBICACION_ID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[UBICACION_ID]"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[UBICACION_ID]"
+                      name="UBICACION_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[STRATUM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[STRATUM]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[STRATUM]"
+                      name="STRATUM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[STRATUMNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[STRATUMNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[STRATUMNAME]"
+                      name="STRATUMNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[REGION]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[REGION]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[REGION]"
+                      name="REGION"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[REGIONNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[REGIONNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[REGIONNAME]"
+                      name="REGIONNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[PSU]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[PSU]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[PSU]"
+                      name="PSU"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[URBANICITY]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[URBANICITY]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[URBANICITY]"
+                      name="URBANICITY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[URBANICITYNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[URBANICITYNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[URBANICITYNAME]"
+                      name="URBANICITYNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[WRK_ZONE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[WRK_ZONE]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[WRK_ZONE]"
+                      name="WRK_ZONE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[REL_ROAD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[REL_ROAD]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[REL_ROAD]"
+                      name="REL_ROAD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[REL_ROADNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[REL_ROADNAME]"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].Columns[REL_ROADNAME]"
+                      name="REL_ROADNAME"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[UBICACION_ID]"
+                      dataType="i8"
+                      name="UBICACION_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[STRATUM]"
+                      dataType="wstr"
+                      length="255"
+                      name="STRATUM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[STRATUMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="STRATUMNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[REGION]"
+                      dataType="wstr"
+                      length="255"
+                      name="REGION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[REGIONNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="REGIONNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[PSU]"
+                      dataType="wstr"
+                      length="255"
+                      name="PSU" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[URBANICITY]"
+                      dataType="wstr"
+                      length="255"
+                      name="URBANICITY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[URBANICITYNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="URBANICITYNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[WRK_ZONE]"
+                      dataType="wstr"
+                      length="255"
+                      name="WRK_ZONE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[REL_ROAD]"
+                      dataType="wstr"
+                      length="255"
+                      name="REL_ROAD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output].ExternalColumns[REL_ROADNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="REL_ROADNAME" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[UBICACION_ID]"
+                      dataType="i8"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[UBICACION_ID]"
+                      name="UBICACION_ID" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[STRATUM]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[STRATUM]"
+                      name="STRATUM" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[STRATUMNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[STRATUMNAME]"
+                      name="STRATUMNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[REGION]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[REGION]"
+                      name="REGION" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[REGIONNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[REGIONNAME]"
+                      name="REGIONNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[PSU]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[PSU]"
+                      name="PSU" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[URBANICITY]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[URBANICITY]"
+                      name="URBANICITY" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[URBANICITYNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[URBANICITYNAME]"
+                      name="URBANICITYNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[WRK_ZONE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[WRK_ZONE]"
+                      name="WRK_ZONE" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[REL_ROAD]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[REL_ROAD]"
+                      name="REL_ROAD" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[REL_ROADNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[REL_ROADNAME]"
+                      name="REL_ROADNAME" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow acc_20.Paths[ADO NET Source Output]"
+              endId="Package\Data Flow acc_20\ADO NET Destination.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow acc_20\ADO NET Source.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Data Flow acc_20.Paths[ADO NET Source Output1]"
+              endId="Package\Data Flow acc_20\ADO NET Destination 1.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow acc_20\ADO NET Source 1.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Data Flow acc_20.Paths[ADO NET Source Output2]"
+              endId="Package\Data Flow acc_20\ADO NET Destination 2.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow acc_20\ADO NET Source 2.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Data Flow acc_20.Paths[ADO NET Source Output3]"
+              endId="Package\Data Flow acc_20\ADO NET Destination 3.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow acc_20\ADO NET Source 3.Outputs[ADO NET Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Data Flow acc_20"
+          TopLeft="27.9999987706542,60.0999996203184" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow acc_20">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\Data Flow acc_20\ADO NET Source 1"
+          TopLeft="284.999984428287,92.7333326884773" />
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\Data Flow acc_20\ADO NET Source 3"
+          TopLeft="423.925903064142,195.966665358875" />
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\Data Flow acc_20\ADO NET Destination 1"
+          TopLeft="555.833302963941,115.266665865117" />
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\Data Flow acc_20\ADO NET Destination 2"
+          TopLeft="747.833304466474,273.166665431195" />
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\Data Flow acc_20\ADO NET Source 2"
+          TopLeft="431.666643081441,281.666664707992" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Data Flow acc_20\ADO NET Destination"
+          TopLeft="213.83332358963,200.166665521596" />
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\Data Flow acc_20\ADO NET Destination 3"
+          TopLeft="626.285158675837,196.692591488369" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\Data Flow acc_20\ADO NET Source"
+          TopLeft="47.9999976779025,96.4999993671974" />
+        <EdgeLayout
+          Id="Package\Data Flow acc_20.Paths[ADO NET Source Output2]"
+          TopLeft="600.466643081441,302.466664707992">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="147.366661385033,-8.49999927679727"
+              Start="0,0"
+              End="139.866661385033,-8.49999927679727">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="69.6833306925165,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.6833306925165,0"
+                    Point2="73.6833306925165,0"
+                    Point3="73.6833306925165,-4" />
+                  <mssgle:LineSegment
+                    End="73.6833306925165,-4.49999927679727" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.6833306925165,-4.49999927679727"
+                    Point2="73.6833306925165,-8.49999927679727"
+                    Point3="77.6833306925165,-8.49999927679727" />
+                  <mssgle:LineSegment
+                    End="139.866661385033,-8.49999927679727" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow acc_20.Paths[ADO NET Source Output1]"
+          TopLeft="453.799984428287,113.533332688477">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102.033318535654,22.5333331766394"
+              Start="0,0"
+              End="94.5333185356536,22.5333331766394">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="47.0166592678268,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.0166592678268,0"
+                    Point2="51.0166592678268,0"
+                    Point3="51.0166592678268,4" />
+                  <mssgle:LineSegment
+                    End="51.0166592678268,18.5333331766394" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51.0166592678268,18.5333331766394"
+                    Point2="51.0166592678268,22.5333331766394"
+                    Point3="55.0166592678268,22.5333331766394" />
+                  <mssgle:LineSegment
+                    End="94.5333185356536,22.5333331766394" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow acc_20.Paths[ADO NET Source Output]"
+          TopLeft="127.999997677902,138.099999367197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="175.433325911727,62.0666661543981"
+              Start="0,0"
+              End="175.433325911727,54.5666661543981">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.0333330771991" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.0333330771991"
+                    Point2="0,31.0333330771991"
+                    Point3="4,31.0333330771991" />
+                  <mssgle:LineSegment
+                    End="171.433325911727,31.0333330771991" />
+                  <mssgle:CubicBezierSegment
+                    Point1="171.433325911727,31.0333330771991"
+                    Point2="175.433325911727,31.0333330771991"
+                    Point3="175.433325911727,35.0333330771991" />
+                  <mssgle:LineSegment
+                    End="175.433325911727,54.5666661543981" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow acc_20.Paths[ADO NET Source Output3]"
+          TopLeft="592.725903064142,217.129628423622">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33.559255611695,0"
+              Start="0,0"
+              End="26.059255611695,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.059255611695,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow acc_20\ADO NET Source 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow acc_20\ADO NET Source 3">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow acc_20\ADO NET Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow acc_20\ADO NET Destination 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow acc_20\ADO NET Source 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow acc_20\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow acc_20\ADO NET Destination 3">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow acc_20\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

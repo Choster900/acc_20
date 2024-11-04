@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LAPTOP-HRQ7E21P.StarAcc.choster900"
+  DTS:DTSID="{1BD2EBF0-B75F-439E-B1E8-8830B522BE9E}"
+  DTS:CreationName="ADO.NET:System.Data.OleDb.OleDbConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=LAPTOP-HRQ7E21P;User ID=choster900;Initial Catalog=EstrellaETL;Provider=MSOLEDBSQL.1;Persist Security Info=True;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAKlqn/sEItk+EER5pW40BowAAAAACAAAAAAAQZgAAAAEAACAAAAC1rmc9kHLdXkZ9kTuTb0u3W1euHCPLNhVxCOiihgWFFgAAAAAOgAAAAAIAACAAAAB9k8gEyYMl8jUxMlNmxDzEOD3Kitcgq7LSx41JJh2ZFIAAAADN97pG7p4xudAe0Tbs/YZeELRTFhRsZkRUJsq2z9GTD7o+iw5YCJaLMLpfw7uiR6q/vcfK2A3m2Jt4xBhAVg2RPBDVkoXL+6kH4QFfETxtbAiJu1pfkcju9+UUNi6dS6lsiKrYw8Gwc490opmjQ7JH/Ms1fy7LMl+uX1WsCHK1nEAAAACUmxiU0sQaLFfaLr8pnO5oOC1stlKBUwpRlj4pJDYWL5k80V2aPcCbM+hpiMu1WGqTwYM/35tRvEHWqfBDGtFD</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

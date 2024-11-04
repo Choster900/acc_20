@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LAPTOP-HRQ7E21P.AccidentsUsCaseNum.choster900"
+  DTS:DTSID="{88BE1F59-5BBE-41B4-90F5-6089FC80EB01}"
+  DTS:CreationName="ADO.NET:System.Data.OleDb.OleDbConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=LAPTOP-HRQ7E21P;User ID=choster900;Initial Catalog=AccidentsUsCaseNum;Provider=MSOLEDBSQL.1;Persist Security Info=True;Initial File Name=;Server SPN=;Authentication=;Access Token=;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAKlqn/sEItk+EER5pW40BowAAAAACAAAAAAAQZgAAAAEAACAAAACc68yyK4KzMkgPbbm3eQjkyiYNZregdcPhFxLIVoMiPAAAAAAOgAAAAAIAACAAAADw59C2xGyOwIWS+bmxCnt76OhQ5pWE4p3ekaPeS3bnaIAAAACVVwE3gNb5AvzFjvDhwSQsqeG4VNKgpjIW6iQ845GS44MN3sQ18EjegSOAcagkM55D2ToaFqtzd9Z7CHlQQ8KadWFVCc7NnYRkH2T4n8RpRhM1sVSH9CVN/0aMwF1rUnSLyZcuOz2LSPpcs72hhAIRvD4O5mhyz6fb8QJH92/ZDkAAAAD3MvGHb6xO2gBHJh2nv9vzN8jnli04DpW2TlEA2IPCWPB5cm5zhhDIb0RpNFa0eQKVWAz778njtDd4GsI/PX5c</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
